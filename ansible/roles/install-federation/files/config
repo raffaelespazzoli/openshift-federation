@@ -1,0 +1,205 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM2akNDQWRLZ0F3SUJBZ0lCQVRBTkJna3Foa2lHOXcwQkFRc0ZBREFtTVNRd0lnWURWUVFEREJ0dmNHVnUKYzJocFpuUXRjMmxuYm1WeVFERTFNemd3TmpZME56a3dIaGNOTVRnd09USTNNVFkwTVRFNFdoY05Nak13T1RJMgpNVFkwTVRFNVdqQW1NU1F3SWdZRFZRUUREQnR2Y0dWdWMyaHBablF0YzJsbmJtVnlRREUxTXpnd05qWTBOemt3CmdnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3Z2dFS0FvSUJBUUM0WTMvZzJxeHVFNkJUZVIxUnhCSEcKWVNrbVl2eVpIeWVNTnVyMlhjUTZuZmcrNmludExhQXFhTFdPVGVEUldmai9CQmt5Q3ZvQWt4N0VwZzlmeFRmRwpYaC91L0wyZ3RtRmRmemtQd3dBVzhIeHNHYS9Ha3V4TzF1cXQ0aVJWSnEvQUJRUGphYWg4WTNtOXJ2Z0N0R2luCklPbytoSFd1aE1FUEQ3VHAzZHpOU3dGTzNyMzV4OHBDU2xHL0IxRXQwZ25FYmtEdDBYbXd2cEpnOWViYjRRMkgKUWY2QTdsSTJnVnhaSEhDQ3NHUXdVTHhvM1JEL3phWHJXOGlWalpLMzhUSWlIajlHSm9wYWNwclZFdStSOXNxbAozZzdBdkxSL3NaOXRSZ05TYVpxMlJtZ0VqcnVKLzNqUHJaQXBteE94U0d1Nm16UHJWZDZhckY2U3dTRG0yV25sCkFnTUJBQUdqSXpBaE1BNEdBMVVkRHdFQi93UUVBd0lDcERBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUEwR0NTcUcKU0liM0RRRUJDd1VBQTRJQkFRQnRRdG9pWnNyaG9RUVFtNm5KbW5iOWFab2VTWDgxWlRpSW5nUVRINU5Ib3JrTQo1alQ5MFFacDZDanR0T3I0Q2xJVnVpRUdaQnpiRW5Rb0grSEY5VkExc2h2eGR2L2hrVnZ2akNHYWhwTFl3SGV0ClZPeUQ5bzZoRmx4a1hJNkZYOVhmcWxOVEhxK3JFSHpMNlFUekc1SUJYQm91WlRpS3Z2YnE2cXFWVk9uK2VKVjUKa1pvVDkzWGhSN3FMbkFLTThTdEVZa3o1Ykx0cUR0dzgxUmdyTjBTdVEwNWwra1lqWFIrbGZQS1ZzNFZRYW5GeAozdjJYMy9YZUQ3eHM3TzhmMnVKK1RhYmhqNHBLNXRHVjFTaXZHWlgyVUlQRjVYT094Z3ROWGVyK2RvSUhYNHZVCmRHZzA5VmZLU1lZeEh6dnJRWFZOVkFUUCtDaysydkhvSnpqSkhVZ3AKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    server: https://127.0.0.1:8443
+  name: 127-0-0-1:8443
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM2akNDQWRLZ0F3SUJBZ0lCQVRBTkJna3Foa2lHOXcwQkFRc0ZBREFtTVNRd0lnWURWUVFEREJ0dmNHVnUKYzJocFpuUXRjMmxuYm1WeVFERTFNemd3TmpZME56a3dIaGNOTVRnd09USTNNVFkwTVRFNFdoY05Nak13T1RJMgpNVFkwTVRFNVdqQW1NU1F3SWdZRFZRUUREQnR2Y0dWdWMyaHBablF0YzJsbmJtVnlRREUxTXpnd05qWTBOemt3CmdnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3Z2dFS0FvSUJBUUM0WTMvZzJxeHVFNkJUZVIxUnhCSEcKWVNrbVl2eVpIeWVNTnVyMlhjUTZuZmcrNmludExhQXFhTFdPVGVEUldmai9CQmt5Q3ZvQWt4N0VwZzlmeFRmRwpYaC91L0wyZ3RtRmRmemtQd3dBVzhIeHNHYS9Ha3V4TzF1cXQ0aVJWSnEvQUJRUGphYWg4WTNtOXJ2Z0N0R2luCklPbytoSFd1aE1FUEQ3VHAzZHpOU3dGTzNyMzV4OHBDU2xHL0IxRXQwZ25FYmtEdDBYbXd2cEpnOWViYjRRMkgKUWY2QTdsSTJnVnhaSEhDQ3NHUXdVTHhvM1JEL3phWHJXOGlWalpLMzhUSWlIajlHSm9wYWNwclZFdStSOXNxbAozZzdBdkxSL3NaOXRSZ05TYVpxMlJtZ0VqcnVKLzNqUHJaQXBteE94U0d1Nm16UHJWZDZhckY2U3dTRG0yV25sCkFnTUJBQUdqSXpBaE1BNEdBMVVkRHdFQi93UUVBd0lDcERBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUEwR0NTcUcKU0liM0RRRUJDd1VBQTRJQkFRQnRRdG9pWnNyaG9RUVFtNm5KbW5iOWFab2VTWDgxWlRpSW5nUVRINU5Ib3JrTQo1alQ5MFFacDZDanR0T3I0Q2xJVnVpRUdaQnpiRW5Rb0grSEY5VkExc2h2eGR2L2hrVnZ2akNHYWhwTFl3SGV0ClZPeUQ5bzZoRmx4a1hJNkZYOVhmcWxOVEhxK3JFSHpMNlFUekc1SUJYQm91WlRpS3Z2YnE2cXFWVk9uK2VKVjUKa1pvVDkzWGhSN3FMbkFLTThTdEVZa3o1Ykx0cUR0dzgxUmdyTjBTdVEwNWwra1lqWFIrbGZQS1ZzNFZRYW5GeAozdjJYMy9YZUQ3eHM3TzhmMnVKK1RhYmhqNHBLNXRHVjFTaXZHWlgyVUlQRjVYT094Z3ROWGVyK2RvSUhYNHZVCmRHZzA5VmZLU1lZeEh6dnJRWFZOVkFUUCtDaysydkhvSnpqSkhVZ3AKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    server: https://192.168.42.118:8443
+  name: 192-168-42-118:8443
+- cluster:
+    insecure-skip-tls-verify: true
+    server: https://console.hmhs.rht-labs.com:443
+  name: console-hmhs-rht-labs-com:443
+- cluster:
+    insecure-skip-tls-verify: true
+    server: https://console.raffa1.casl-contrib.osp.rht-labs.com:8443
+  name: console-raffa1-casl-contrib-osp-rht-labs-com:8443
+- cluster:
+    insecure-skip-tls-verify: true
+    server: https://console.raffa2.casl-contrib.osp.rht-labs.com:8443
+  name: console-raffa2-casl-contrib-osp-rht-labs-com:8443
+- cluster:
+    insecure-skip-tls-verify: true
+    server: https://master.env1.raffa.systems:8443
+  name: master-env1-raffa-systems:8443
+- cluster:
+    insecure-skip-tls-verify: true
+    server: https://master.env2.raffa.systems:8443
+  name: master-env2-raffa-systems:8443
+- cluster:
+    insecure-skip-tls-verify: true
+    server: https://master.env3.raffa.systems:8443
+  name: master-env3-raffa-systems:8443
+contexts:
+- context:
+    cluster: 192-168-42-118:8443
+    user: developer/192-168-42-118:8443
+  name: /192-168-42-118:8443/developer
+- context:
+    cluster: console-raffa2-casl-contrib-osp-rht-labs-com:8443
+    user: admin/console-raffa2-casl-contrib-osp-rht-labs-com:8443
+  name: /console-raffa2-casl-contrib-osp-rht-labs-com:8443/admin
+- context:
+    cluster: master-env1-raffa-systems:8443
+    user: admin/master-env1-raffa-systems:8443
+  name: /master-env1-raffa-systems:8443/admin
+- context:
+    cluster: master-env2-raffa-systems:8443
+    user: admin/master-env2-raffa-systems:8443
+  name: /master-env2-raffa-systems:8443/admin
+- context:
+    cluster: console-raffa1-casl-contrib-osp-rht-labs-com:8443
+    namespace: bookinfo
+    user: admin/console-raffa1-casl-contrib-osp-rht-labs-com:8443
+  name: bookinfo/console-raffa1-casl-contrib-osp-rht-labs-com:8443/admin
+- context:
+    cluster: console-raffa2-casl-contrib-osp-rht-labs-com:8443
+    namespace: bookinfo
+    user: admin/console-raffa2-casl-contrib-osp-rht-labs-com:8443
+  name: bookinfo/console-raffa2-casl-contrib-osp-rht-labs-com:8443/admin
+- context:
+    cluster: 127-0-0-1:8443
+    namespace: default
+    user: system:admin/127-0-0-1:8443
+  name: default/127-0-0-1:8443/system:admin
+- context:
+    cluster: 192-168-42-118:8443
+    namespace: default
+    user: system:admin/127-0-0-1:8443
+  name: default/192-168-42-118:8443/system:admin
+- context:
+    cluster: console-hmhs-rht-labs-com:443
+    namespace: default
+    user: rspazzol/console-hmhs-rht-labs-com:443
+  name: default/console-hmhs-rht-labs-com:443/rspazzol
+- context:
+    cluster: console-raffa1-casl-contrib-osp-rht-labs-com:8443
+    namespace: default
+    user: admin/console-raffa1-casl-contrib-osp-rht-labs-com:8443
+  name: default/console-raffa1-casl-contrib-osp-rht-labs-com:8443/admin
+- context:
+    cluster: console-raffa2-casl-contrib-osp-rht-labs-com:8443
+    namespace: default
+    user: admin/console-raffa2-casl-contrib-osp-rht-labs-com:8443
+  name: default/console-raffa2-casl-contrib-osp-rht-labs-com:8443/admin
+- context:
+    cluster: master-env1-raffa-systems:8443
+    namespace: default
+    user: admin/master-env1-raffa-systems:8443
+  name: default/master-env1-raffa-systems:8443/admin
+- context:
+    cluster: master-env2-raffa-systems:8443
+    namespace: default
+    user: admin/master-env2-raffa-systems:8443
+  name: default/master-env2-raffa-systems:8443/admin
+- context:
+    cluster: master-env3-raffa-systems:8443
+    namespace: default
+    user: admin/master-env3-raffa-systems:8443
+  name: default/master-env3-raffa-systems:8443/admin
+- context:
+    cluster: console-raffa1-casl-contrib-osp-rht-labs-com:8443
+    namespace: federation-system
+    user: admin/console-raffa1-casl-contrib-osp-rht-labs-com:8443
+  name: federation-system/console-raffa1-casl-contrib-osp-rht-labs-com:8443/admin
+- context:
+    cluster: console-raffa1-casl-contrib-osp-rht-labs-com:8443
+    namespace: istio-operator
+    user: admin/console-raffa1-casl-contrib-osp-rht-labs-com:8443
+  name: istio-operator/console-raffa1-casl-contrib-osp-rht-labs-com:8443/admin
+- context:
+    cluster: console-raffa2-casl-contrib-osp-rht-labs-com:8443
+    namespace: istio-remote
+    user: admin/console-raffa2-casl-contrib-osp-rht-labs-com:8443
+  name: istio-remote/console-raffa2-casl-contrib-osp-rht-labs-com:8443/admin
+- context:
+    cluster: console-raffa1-casl-contrib-osp-rht-labs-com:8443
+    namespace: istio-system
+    user: admin/console-raffa1-casl-contrib-osp-rht-labs-com:8443
+  name: istio-system/console-raffa1-casl-contrib-osp-rht-labs-com:8443/admin
+- context:
+    cluster: console-raffa2-casl-contrib-osp-rht-labs-com:8443
+    namespace: istio-system
+    user: admin/console-raffa2-casl-contrib-osp-rht-labs-com:8443
+  name: istio-system/console-raffa2-casl-contrib-osp-rht-labs-com:8443/admin
+- context:
+    cluster: console-hmhs-rht-labs-com:443
+    namespace: liberty-demo
+    user: rspazzol/console-hmhs-rht-labs-com:443
+  name: liberty-demo/console-hmhs-rht-labs-com:443/rspazzol
+- context:
+    cluster: 192-168-42-118:8443
+    namespace: myproject
+    user: developer/192-168-42-118:8443
+  name: minishift
+- context:
+    cluster: 192-168-42-118:8443
+    namespace: myproject
+    user: developer/192-168-42-118:8443
+  name: myproject/192-168-42-118:8443/developer
+- context:
+    cluster: console-hmhs-rht-labs-com:443
+    namespace: slr
+    user: rspazzol/console-hmhs-rht-labs-com:443
+  name: slr/console-hmhs-rht-labs-com:443/rspazzol
+- context:
+    cluster: console-raffa1-casl-contrib-osp-rht-labs-com:8443
+    namespace: test-sdn-tunnel
+    user: admin/console-raffa1-casl-contrib-osp-rht-labs-com:8443
+  name: test-sdn-tunnel/console-raffa1-casl-contrib-osp-rht-labs-com:8443/admin
+- context:
+    cluster: console-raffa2-casl-contrib-osp-rht-labs-com:8443
+    namespace: test-sdn-tunnel
+    user: admin/console-raffa2-casl-contrib-osp-rht-labs-com:8443
+  name: test-sdn-tunnel/console-raffa2-casl-contrib-osp-rht-labs-com:8443/admin
+- context:
+    cluster: master-env1-raffa-systems:8443
+    namespace: test-sdn-tunnel
+    user: admin/master-env1-raffa-systems:8443
+  name: test-sdn-tunnel/master-env1-raffa-systems:8443/admin
+- context:
+    cluster: master-env2-raffa-systems:8443
+    namespace: test-sdn-tunnel
+    user: admin/master-env2-raffa-systems:8443
+  name: test-sdn-tunnel/master-env2-raffa-systems:8443/admin
+- context:
+    cluster: console-raffa1-casl-contrib-osp-rht-labs-com:8443
+    namespace: test-sdn
+    user: admin/console-raffa1-casl-contrib-osp-rht-labs-com:8443
+  name: test-sdn/console-raffa1-casl-contrib-osp-rht-labs-com:8443/admin
+- context:
+    cluster: console-raffa2-casl-contrib-osp-rht-labs-com:8443
+    namespace: test-sdn
+    user: admin/console-raffa2-casl-contrib-osp-rht-labs-com:8443
+  name: test-sdn/console-raffa2-casl-contrib-osp-rht-labs-com:8443/admin
+current-context: default/console-raffa2-casl-contrib-osp-rht-labs-com:8443/admin
+kind: Config
+preferences: {}
+users:
+- name: admin/console-raffa1-casl-contrib-osp-rht-labs-com:8443
+  user:
+    token: JYrRnyU6_j5wJiEYdKe9gghkV4A1tb_zWG9QDjvJDx8
+- name: admin/console-raffa2-casl-contrib-osp-rht-labs-com:8443
+  user:
+    token: duACpySW_-7zQ2pq4TPBuDMTabe5NkOOPM6HnhUcBEM
+- name: admin/master-env1-raffa-systems:8443
+  user:
+    token: y5JYR6X1ydhHaMZTUne-5IfcDp5ZvrxqD9xjUl-3vZg
+- name: admin/master-env2-raffa-systems:8443
+  user:
+    token: HVtmlGr-l4T9EhyJvRbXH_ersITvGNB50qGiA-hhKTs
+- name: admin/master-env3-raffa-systems:8443
+  user:
+    token: EX1xWiUBkhqu18_jLh8Z-oJev0-fxqSLirlgcMZPJSo
+- name: developer/192-168-42-118:8443
+  user:
+    token: o1b58lOWIw6Javomyn7i6t2acMsK6muFkiJzYfsJfx0
+- name: rspazzol/console-hmhs-rht-labs-com:443
+  user:
+    token: Me4sqZD2-uFiLkr64Bt86lUelRQ1yrSMorGGeIqNXhA
+- name: system:admin/127-0-0-1:8443
+  user:
+    client-certificate-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURKRENDQWd5Z0F3SUJBZ0lCQmpBTkJna3Foa2lHOXcwQkFRc0ZBREFtTVNRd0lnWURWUVFEREJ0dmNHVnUKYzJocFpuUXRjMmxuYm1WeVFERTFNemd3TmpZME56a3dIaGNOTVRnd09USTNNVFkwTVRJd1doY05NakF3T1RJMgpNVFkwTVRJeFdqQk9NVFV3SEFZRFZRUUtFeFZ6ZVhOMFpXMDZZMngxYzNSbGNpMWhaRzFwYm5Nd0ZRWURWUVFLCkV3NXplWE4wWlcwNmJXRnpkR1Z5Y3pFVk1CTUdBMVVFQXhNTWMzbHpkR1Z0T21Ga2JXbHVNSUlCSWpBTkJna3EKaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUEzSE1RKytib3J4Q25Od0hCMDBBWkhwMDBaMUhTZy92WQoxTWo0eDFtdlloYnpJamFPVWt3cE02Z3hhaFM1L0NFMlZqcnVmRkFibkVwK0V2YkhwWitBbUJEdnJBcGZhaUdwCk01SGFmZ0tPKzNObWZRTFJiVGtPdFJwM0lsbG5jaitTTkpTMkdOSFFEVDBpeTZYVkY3b0FWLzVOdmcybkd4Tm8KbnA4NTlqL3lZdVRRUDZ1TzVid1F4YWFTaU9xWW4wMXdtRm1BSHZiUSs5R01aWm5WSHh5aG4wVmVDQzd4bklnVwppbVdHeFZxdzhOQnR2NktDLzFjU3Zsc090K0VtRVRHblc1dzFIa3Z2MVBZY0lNZW1lNTFsM2ltNEhMTmlPZEJOCjM3aFhlOHdndEF2c2RsNmdLZE45NmJreWNyQWFPMm80U0xDeU5iVWZYWDJIWHpjMUtTM1NvUUlEQVFBQm96VXcKTXpBT0JnTlZIUThCQWY4RUJBTUNCYUF3RXdZRFZSMGxCQXd3Q2dZSUt3WUJCUVVIQXdJd0RBWURWUjBUQVFILwpCQUl3QURBTkJna3Foa2lHOXcwQkFRc0ZBQU9DQVFFQURZT0w4L1REaVJnSHpJSDVKM2t1eE83NzJibnhwWlBpCk1yaUY5QUFXdlJUVytSVDRGWlVGVk1QK2NvR24rdHZsd25LVURQTy9ldmlZZW81UTJwK0NhOFpvazhsYWw1bEIKbmkxWnpKb21yL05IR2ZTbU51SGR3UHFZSVkxWFRYQUM4UStIWGcza0NJemFJL3NaVnhQRHcvVWxBZHhzUmxKRgp3VUFwOXN4RVhCYllWL2RlZmMweFQrY3FSbURPU0Y0WDFnUEJtVzNZT1h2Q3ZtcTJQSWlHcFJseHAwV2UyVkQ0CkJxbjBWeFJ6d3lmRXdNTmtsT3FjQWI1RWRJSGFCdzdQcUpra3J1SGN6SVpSbDczcDJrbUpSem1JQW0wUytTM0YKWER6Zkp6U2tjN1JMR28wRDNYdnVtU2xCbWVNUEFndWNKWDBIT3UrdjVKUXdTT2VuVjFUSFZBPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    client-key-data: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb3dJQkFBS0NBUUVBM0hNUSsrYm9yeENuTndIQjAwQVpIcDAwWjFIU2cvdlkxTWo0eDFtdlloYnpJamFPClVrd3BNNmd4YWhTNS9DRTJWanJ1ZkZBYm5FcCtFdmJIcForQW1CRHZyQXBmYWlHcE01SGFmZ0tPKzNObWZRTFIKYlRrT3RScDNJbGxuY2orU05KUzJHTkhRRFQwaXk2WFZGN29BVi81TnZnMm5HeE5vbnA4NTlqL3lZdVRRUDZ1Two1YndReGFhU2lPcVluMDF3bUZtQUh2YlErOUdNWlpuVkh4eWhuMFZlQ0M3eG5JZ1dpbVdHeFZxdzhOQnR2NktDCi8xY1N2bHNPdCtFbUVUR25XNXcxSGt2djFQWWNJTWVtZTUxbDNpbTRITE5pT2RCTjM3aFhlOHdndEF2c2RsNmcKS2ROOTZia3ljckFhTzJvNFNMQ3lOYlVmWFgySFh6YzFLUzNTb1FJREFRQUJBb0lCQUF2NWxDcWEySGpxQnF0TwpSU0Vja2tDL2VXRkRhSlFTMGl4ODNrYTE4SGo3bGlsOW5TMkxSWkd3eVQ1aDhkaG9WWE5Kc0RyQWZ6OTJMSE1MClJMMFNkUUhOcWJkR3VQZ2k2L1lKTGowNkZscENZb2JYNkZodWlRWDljZ3REb0FMc3dSeHFGNW94aTRPc2xuOUoKZXRIWElMMm02c0l3SzZ1azJrSURsRHAwTHM2QVZaU3plUHZmeFE3MWQzcVp6TDV1enJWOUMzK2xqNUFRdlRkVgowQ2NLREFCekNDalBxa29YbVBTUklKZDVHL1ZiTllBSUcwS2d5QXlBOC9yNlFFWFIrVjQ1NHRyNU9FcitxSmFWClpmMjZYWjc1SHRJTDRqSFJSa3lDM0NPbXJkVWpsZ0N3K01OZXlCQnlsZi9pRGZvSzVLbDRaa2xkK2h0RTk0VDkKc0ZPbi9nRUNnWUVBL0NzWmx4YndPbDByblBURmlKU0NaQ3FkSDBQNDQ0anNlTHE1RTRUVXlwOE5pa0JrYmdCOApEWnhTVlF3U0FMcW1za0xkU2xlTmU3cGhna1grUWM3UHZ5dGJnRExLY1Q4cGtCNzRxYksvU2VZVFkybzI2RjJLCkh1QUdSaGIvWUxjTWVWNm41cDNIL1hOdUpFTDR6ekFZY0VNZVBJOEZNWW9LOHV5R2wwYVNjQmtDZ1lFQTM4eVYKbGc2WkpWQWpEYnhTanBaVXZ3ZzNhdCtFbWFEbFJiWXFiZGFHNXUzZzZvUHJxRTBaREJVTFdEbHpBeW1SRTlqOAp5VzMzL3NMbFlRUWlnNXRqc1BKMnRKSUxVN1lYRTJWNkY1a1grTWZhcVFrb3dWeFA5SHE0N0s3TzhjTmVKUjlFCkk2bHF3RitxcWVqejJmNlp5TnZKdERyTm1BVDlCYU0yMlo0Z0o4a0NnWUFacmdIekl3RGYwTEVxVUxyMUI3cW4KbkxkWGdjS00yVnJMaUtoa1ZuaWRFY2w5Tk1XRmRrTXIxNm1DdzdIcHBSaG91dXB5TWF4VTEwd3F5aG4wZGEwdQpXS24reWkxWGp3a2FoaXpvaXkxenh4eGVXV2l5RFNTTnRGNnZNSlJkTXdid0xUV0lCTFZqR0NnMVJTUzFaTDU0CllEMXFDVjZNQnZUS2ZFL1FnLzFSc1FLQmdRRE9CbHkrNDNtQXJDRlpCOEZJbW9ReHlMS2JwR0ZCdktqVVlEcjMKR3NMZDNLZHR2VHc0bDZFelNqeERYNy9OYlhxdE50aWY1cWlpMDNDdXUwdTZ0RlkyRXovTVE1WkIzaU9vSzRjVwpLazJ6TE9qVExDZGt1a0t3NGpsVFNpb2d6cVhncnNQZndKc1J0Z0E2b3NXNkxYUU5RS2lUVG43dUw4bHVZeTZmCmI3NVNZUUtCZ0R6bkhCL0pBS3habWI5TXJDanJaa1Z4eGo2TGxvVThneXl3SWhQRWxrZHBMWFcvSmhFckM4NHUKUHFucWFpclo0amlyNFlkd21YSnBQUGQ1ZEhEQUJFRkV3QmNob1NBNVZxUXlRM3JFeFREa0N4UnJZMEEyempWVQpoL0pmVjBGK2RtbGg1RVh0SXNiVm9oNlVWbVJsck1rQ0Z0R1NQNU42MUFmbStmdDB5RFZmCi0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg==

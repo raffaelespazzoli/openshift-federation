@@ -1,0 +1,3 @@
+---
+- name: register cluster
+  command: "{{ role_path }}/files/bin/kubefed2 join {{ cluster.name }} --cluster-context {{ cluster.context }} --host-cluster-context {{ federation_cluster.context }} --add-to-registry --v=2"

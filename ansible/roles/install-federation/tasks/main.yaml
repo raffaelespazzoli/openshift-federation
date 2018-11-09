@@ -5,8 +5,20 @@
   loop_control:
     loop_var: cluster
 
+- name: debug
+  debug:
+    var: clusters    
+
 - name: deploy federation control
   include_tasks: deploy-federation-control-plane.yaml
   with_items: "{{ clusters | selectattr('federation_control_plane') | list }}"
   loop_control:
-    loop_var: cluster    
+    loop_var: cluster
+
+- name: register clusters
+  include_tasks: register-clusters.yaml
+  with_items: "{{ clusters }}"
+  vars:
+    federation_cluster: "{{ (clusters | selectattr('federation_control_plane') | list)[0] }}"
+  loop_control:
+    loop_var: cluster
