@@ -1,0 +1,13 @@
+---
+- name: create kube-multicluster-public project
+  command: oc --context {{ cluster.context }} new-project kube-multicluster-public
+  register: oc_res
+  failed_when: oc_res.rc >= 2
+
+- name: create federation-system project
+  command: oc --context {{ cluster.context }} new-project federation-system
+  register: oc_res
+  failed_when: oc_res.rc >= 2  
+
+- name: install federation
+  shell: helm template ../../charts/federation-v2 --name federation-v2 --namespace federation-system | oc apply -f -
