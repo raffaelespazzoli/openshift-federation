@@ -1,0 +1,17 @@
+--- 
+- name: delete clusterrole
+  command: oc --context {{ cluster.context }} delete clusterrole federation-controller-manager:{{ cluster.context }}-{{ federation_cluster.context }} --ignore-not-found=true
+
+- name: delete commong clusterrole
+  command: oc --context {{ cluster.context }} delete clusterrole federation-controller-manager:common-{{ cluster.context }}-{{ federation_cluster.context }} --ignore-not-found=true
+
+- name: delete federation namespace
+  command: oc --context {{ cluster.context }} delete project federation-system --ignore-not-found=true
+
+- name: wait for federation namespace to be deleted
+  shell: oc --context {{ cluster.context }} get ns federation-system --no-headers
+  register: get_result
+  until: "'NotFound' in get_result.stderr"
+  retries: 10
+  delay: 10
+  failed_when: get_result.rc >= 2      

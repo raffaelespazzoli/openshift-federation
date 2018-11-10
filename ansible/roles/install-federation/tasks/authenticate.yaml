@@ -3,9 +3,17 @@
 - name: login
   command: oc login --username={{ cluster.username }} --password={{ cluster.password }} --server={{ cluster.url }} --insecure-skip-tls-verify=true
   
-- name: get context
+- name: get current context
   command: oc config current-context
   register: context
+
+- name: get cluster context
+  shell: oc config get-contexts {{ cluster.name }} --no-headers | wc -l
+  register: lines
+
+- name: delete previous cluster context
+  command: oc config delete-context {{ cluster.name }}
+  when: lines.stdout == '1'
 
 - name: rename context
   command: oc config rename-context {{ context.stdout }} {{ cluster.name }}     

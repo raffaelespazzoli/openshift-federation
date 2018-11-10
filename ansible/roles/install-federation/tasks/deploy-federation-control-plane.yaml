@@ -11,3 +11,8 @@
 
 - name: install federation
   shell: helm template {{ role_path }}/files/charts/federation-v2 --name federation-v2 --namespace federation-system | oc --context {{ cluster.context }} apply -f -
+
+- name: install default federated types
+  command: oc --context {{ cluster.context }} apply -f {{ item }} -n federation-system
+  with_fileglob: 
+  - "{{role_path}}/files/federatedtypes/*.yaml"

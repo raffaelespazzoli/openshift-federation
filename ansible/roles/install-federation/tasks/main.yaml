@@ -9,7 +9,21 @@
   debug:
     var: clusters    
 
-- name: deploy federation control
+- name: stop federation and remove cluster registry
+  include_tasks: undeploy-federation-control-plane.yaml
+  with_items: "{{ clusters | selectattr('federation_control_plane') | list }}"
+  loop_control:
+    loop_var: cluster
+
+- name: remove federation-system
+  include_tasks: unregister-clusters.yaml
+  with_items: "{{ clusters }}"
+  vars:
+    federation_cluster: "{{ (clusters | selectattr('federation_control_plane') | list)[0] }}"
+  loop_control:
+    loop_var: cluster          
+
+- name: deploy federation control plane
   include_tasks: deploy-federation-control-plane.yaml
   with_items: "{{ clusters | selectattr('federation_control_plane') | list }}"
   loop_control:

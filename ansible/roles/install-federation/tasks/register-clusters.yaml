@@ -1,3 +1,11 @@
 ---
+- name: get registered cluster
+  shell: oc --context {{ federation_cluster.context }} get federatedcluster {{ cluster.name }} -n federation-system --no-headers | wc -l
+  register: lines
+
+- name: unregister cluster if it existed
+  command: "{{ role_path }}/files/bin/kubefed2 unjoin {{ cluster.name }} --host-cluster-context {{ federation_cluster.context }} --remove-from-registry --v=2"
+  when: lines.stdout == '1'
+
 - name: register cluster
   command: "{{ role_path }}/files/bin/kubefed2 join {{ cluster.name }} --cluster-context {{ cluster.context }} --host-cluster-context {{ federation_cluster.context }} --add-to-registry --v=2"
