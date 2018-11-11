@@ -10,6 +10,13 @@
   retries: 10
   delay: 10 
     
-
 - name: delete kube-multicluster-public namespace
   command: oc --context {{ cluster.context }} delete ns kube-multicluster-public --ignore-not-found=true
+
+- name: wait for kube-multicluster-public namespace to be deleted
+  shell: oc --context {{ cluster.context }} get ns kube-multicluster-public --no-headers
+  register: get_result
+  until: "'NotFound' in get_result.stderr"
+  retries: 10
+  delay: 10
+  failed_when: get_result.rc >= 2 or 'Terminating' in get_result.stdout
