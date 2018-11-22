@@ -1,0 +1,100 @@
+---
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: federatedroutes.openshift.io
+spec:
+  group: openshift.io
+  names:
+    kind: FederatedRoute
+    plural: federatedroutes
+  scope: Namespaced
+  version: v1alpha1
+---
+# placement type
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: federatedrouteplacements.openshift.io
+spec:
+  group: openshift.io
+  names:
+    kind: FederatedRoutePlacement
+    plural: federatedrouteplacements
+  scope: Namespaced
+  validation:
+    openAPIV3Schema:
+      properties:
+        apiVersion:
+          type: string
+        kind:
+          type: string
+        metadata:
+          type: object
+        spec:
+          properties:
+            clusterNames:
+              items:
+                type: string
+              type: array
+          type: object
+        status:
+          type: object
+  version: v1alpha1
+---
+# override type
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: federatedrouteoverrides.openshift.io
+spec:
+  group: openshift.io
+  names:
+    kind: FederatedRouteOverride
+    plural: federatedrouteoverrides
+  scope: Namespaced
+  validation:
+    openAPIV3Schema:
+      properties:
+        apiVersion:
+          type: string
+        kind:
+          type: string
+        metadata:
+          type: object
+        spec:
+          properties:
+            overrides:
+              type: array
+              items:
+                properties:
+                  clusterName:
+                    type: string
+                  data:
+                    type: string
+        status:
+          type: object
+  version: v1alpha1
+---
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedTypeConfig
+metadata:
+  name: routes.openshift.io
+  namespace: federation-system
+spec:
+  target:
+    version: v1
+    kind: Route
+  namespaced: true
+  comparisonField: Generation
+  propagationEnabled: true
+  template:
+    group: openshift.io
+    version: v1alpha1
+    kind: FederatedRoute
+  placement:
+    kind: FederatedRoutePlacement
+  override:
+    kind: FederatedRouteOverride
+  overridePath:
+   - spec.host 

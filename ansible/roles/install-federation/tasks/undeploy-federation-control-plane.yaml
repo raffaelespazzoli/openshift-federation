@@ -1,14 +1,15 @@
 - name: remove federated objects
-  shell: oc --context {{ cluster.context }} delete federatedtypeconfig --all -n federation-system
+  shell: oc --context {{ cluster.context }} delete federatedtypeconfig --all -n federation-system --ignore-not-found=true
   register: del_result
-#  failed_when: del_result.rc > 0 and del_result
+  failed_when: del_result.rc > 0 and not ('the server doesn\'t have a resource type' in del_result.stderr)
 
 - name: wait for federated object to be removed
   shell: oc --context {{ cluster.context }} get federatedtypeconfig -n federation-system 
   register: get_result
   until: get_result.stdout != "No resources found."
   retries: 10
-  delay: 10 
+  delay: 10
+  when: not 'the server doesn\'t have a resource type' in del_result.stderr 
     
 - name: delete kube-multicluster-public namespace
   command: oc --context {{ cluster.context }} delete ns kube-multicluster-public --ignore-not-found=true

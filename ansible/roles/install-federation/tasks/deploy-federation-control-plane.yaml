@@ -10,7 +10,7 @@
   failed_when: oc_res.rc >= 2  
 
 - name: install federation
-  shell: helm template {{ role_path }}/files/charts/federation-v2 --name federation-v2 --namespace federation-system --set tag=latest,pullPolicy=Always | oc --context {{ cluster.context }} apply -f -
+  shell: helm template {{ role_path }}/files/charts/federation-v2 --name federation-v2 --namespace federation-system --set controllermanager.tag=latest,controllermanager.pullPolicy=Always | oc --context {{ cluster.context }} apply -f -
 
 - name: install default federated types
   command: oc --context {{ cluster.context }} apply -f {{ item }} -n federation-system

@@ -1,0 +1,313 @@
+# Copyright 2017 Istio Authors
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+
+##################################################################################################
+# Details service
+##################################################################################################
+---
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedNamespacePlacement
+metadata:
+  name: bookinfo
+spec:
+  clusterNames: {{ .Values.cluster_array }}
+---  
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedService
+metadata:
+  name: details
+  labels:
+    app: details
+spec:
+  template:    
+    spec:
+      ports:
+      - port: 9080
+        name: http
+      selector:
+        app: details
+---
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedServicePlacement
+metadata:
+  name: details
+spec:
+  clusterNames: {{ .Values.cluster_array }}
+---  
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedDeployment
+metadata:
+  name: details-v1
+spec:
+  template:  
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: details
+          version: v1 
+      template:
+        metadata:
+          labels:
+            app: details
+            version: v1
+        spec:
+          containers:
+          - name: details
+            image: istio/examples-bookinfo-details-v1:1.8.0
+            imagePullPolicy: IfNotPresent
+            ports:
+            - containerPort: 9080
+---
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedDeploymentPlacement
+metadata:
+  name: details-v1
+spec:
+  clusterNames: {{ .Values.cluster_array }}
+---  
+##################################################################################################
+# Ratings service
+##################################################################################################
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedService
+metadata:
+  name: ratings
+  labels:
+    app: ratings
+spec:
+  template:    
+    spec:
+      ports:
+      - port: 9080
+        name: http
+      selector:
+        app: ratings
+---
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedServicePlacement
+metadata:
+  name: ratings
+spec:
+  clusterNames: {{ .Values.cluster_array }}    
+---
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedDeployment
+metadata:
+  name: ratings-v1
+spec:
+  template:
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: ratings
+          version: v1  
+      template:
+        metadata:
+          labels:
+            app: ratings
+            version: v1
+        spec:
+          containers:
+          - name: ratings
+            image: istio/examples-bookinfo-ratings-v1:1.8.0
+            imagePullPolicy: IfNotPresent
+            ports:
+            - containerPort: 9080
+---
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedDeploymentPlacement
+metadata:
+  name: ratings-v1
+spec:
+  clusterNames: {{ .Values.cluster_array }}        
+---
+##################################################################################################
+# Reviews service
+##################################################################################################
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedService
+metadata:
+  name: reviews
+  labels:
+    app: reviews
+spec:
+  template:    
+    spec:
+      ports:
+      - port: 9080
+        name: http
+      selector:
+        app: reviews
+---
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedServicePlacement
+metadata:
+  name: reviews
+spec:
+  clusterNames: {{ .Values.cluster_array }}    
+---
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedDeployment
+metadata:
+  name: reviews-v1
+spec:
+  template:  
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: reviews
+          version: v1  
+      template:
+        metadata:
+          labels:
+            app: reviews
+            version: v1
+        spec:
+          containers:
+          - name: reviews
+            image: istio/examples-bookinfo-reviews-v1:1.8.0
+            imagePullPolicy: IfNotPresent
+            ports:
+            - containerPort: 9080
+---
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedDeploymentPlacement
+metadata:
+  name: reviews-v1
+spec:
+  clusterNames: {{ .Values.cluster_array }}        
+---
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedDeployment
+metadata:
+  name: reviews-v2
+spec:
+  template:  
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: reviews
+          version: v2  
+      template:
+        metadata:
+          labels:
+            app: reviews
+            version: v2
+        spec:
+          containers:
+          - name: reviews
+            image: istio/examples-bookinfo-reviews-v2:1.8.0
+            imagePullPolicy: IfNotPresent
+            ports:
+            - containerPort: 9080
+---
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedDeploymentPlacement
+metadata:
+  name: reviews-v2
+spec:
+  clusterNames: {{ .Values.cluster_array }}        
+---
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedDeployment
+metadata:
+  name: reviews-v3
+spec:
+  template:  
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: reviews
+          version: v3  
+      template:
+        metadata:
+          labels:
+            app: reviews
+            version: v3
+        spec:
+          containers:
+          - name: reviews
+            image: istio/examples-bookinfo-reviews-v3:1.8.0
+            imagePullPolicy: IfNotPresent
+            ports:
+            - containerPort: 9080
+---
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedDeploymentPlacement
+metadata:
+  name: reviews-v3
+spec:
+  clusterNames: {{ .Values.cluster_array }}        
+---
+##################################################################################################
+# Productpage services
+##################################################################################################
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedService
+metadata:
+  name: productpage
+  labels:
+    app: productpage
+spec:
+  template:    
+    spec:
+      ports:
+      - port: 9080
+        name: http
+      selector:
+        app: productpage
+---
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedServicePlacement
+metadata:
+  name: productpage
+spec:
+  clusterNames: {{ .Values.cluster_array }}
+---
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedDeployment
+metadata:
+  name: productpage-v1
+spec:
+  template:
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: productpage
+          version: v1  
+      template:
+        metadata:
+          labels:
+            app: productpage
+            version: v1
+        spec:
+          containers:
+          - name: productpage
+            image: istio/examples-bookinfo-productpage-v1:1.8.0
+            imagePullPolicy: IfNotPresent
+            ports:
+            - containerPort: 9080
+---
+apiVersion: core.federation.k8s.io/v1alpha1
+kind: FederatedDeploymentPlacement
+metadata:
+  name: productpage-v1
+spec:
+  clusterNames: {{ .Values.cluster_array }}
