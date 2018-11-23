@@ -1,6 +1,31 @@
 # Install Federation v2
 
-## Deploy bookinfo with federation and Istio Multicluster
+This playbook will istall Federation V2 and register a set of clusters to the federation control plane.
+See an example of the inventory [here](./ansible/inventory) and customize it for your clusters.
+Here is a minimum inventory:
+```
+clusters:
+- name: <cluster_1_name>
+  url: <cluster_1_master_api_url>
+  username: <cluster_1_username>
+  password: <cluster_1_password>
+  federation_control_plane: true  
+- name: <cluster_2_name>
+  url: <cluster2_master_api_url>
+  username: <cluster_2_username>
+  password: <cluster_2_password>
+  federation_control_plane: false 
+```
+You must have exaclty one cluster with the `federation_control_plane` variable set to `true`.
+
+You can run the playbook as follows:
+
+```
+ansible-playbook -i <inventory> ./ansible/playbooks/install-federation/install-federation.yaml
+```
+
+
+# Deploy bookinfo with Federation V2 and Istio Multicluster
 
 This tutorial assume that you have deploy Istio-multicluster. On way to do it is to follow the instructions [here](https://github.com/raffaelespazzoli/openshift-istio-multicluster).
 
