@@ -1,34 +1,35 @@
 # Install Federation v2
 
+## Deploy bookinfo with federation and Istio Multicluster
 
-# Deploy bookinfo with federation and Istio Multicluster
+This tutorial assume that you have deploy Istio-multicluster. On way to do it is to follow the instructions [here](https://github.com/raffaelespazzoli/openshift-istio-multicluster).
 
-This tutorial assume that you have deploye Istio-multicluster as described [here](TODO). 
-
-We are goint to expose our app using a passthrough route and an istio ingressgateway. The gateway needs to be injected with a certficate. To generate the certificate we are going to use [cert-manager](TODO) with a self-signing root CA.
+The istio ingress gateway that exposes the app needs to be injected with a certficate. To generate the certificate we are going to use [cert-manager](https://github.com/jetstack/cert-manager) with a self-signing root CA.
 
 ## Enable admission controller
 In case you have done it yet, it becomes now mandatory to have admission controllers enabled for the rest of the tutorial to work.
-Here is how you can do it.
-for each cluster run the following
+For each cluster run the following
 ```
 ansible masters -i <inventory> -m copy -a 'src=master-config.patch dest=/etc/origin/master/'
 ansible masters -i <inventory> -m copy -a 'remote_src=yes src=/etc/origin/master/master-config.yaml dest=/etc/origin/master/master-config.yaml.prepatch'
 ansible masters -i <inventory> -m shell -a 'oc ex config patch /etc/origin/master/master-config.yaml.prepatch -p "$(cat /etc/origin/master/master-config.patch)" > /etc/origin/master/master-config.yaml'
 ansible masters -i <inventory> -m shell -a '/usr/local/bin/master-restart api && /usr/local/bin/master-restart controllers'
 ```
-
+Finally make sure that the `istio-sidecar-injection` configmap has automatic injection enabled in every cluster. Look for `policy: enabled`.
 
 ## Deploy cert-manager
-To prepare the cluster with cert manager follow these instructions TODO
+
+You'll need cert-manager deployed in every cluster that your are joining. One way to do it is to run this playbook:
+```
+ansible-playbook -i <inventory> ./example/cert-manager/ansible/playbooks/deploy-cert-manager/deploy-cert-manager.yaml
+```
 
 ## Deploy custom federated resources
 
-In order to propagate the route and certificate resources, we need to create the federated versions of those resources.
+In order to propagate the certificate object, we need to create the federated versions of it.
 Assuming $FED_CLUSTER containes the context of the cluster with the federation control plane, run the following:
 ```
 oc --context $FED_CLUSTER apply -f example/bookinfo/federated-crds/federated-certificate.yaml
-oc --context $FED_CLUSTER apply -f example/bookinfo/federated-crds/federated-route.yaml
 ```
 
 ## Deploy bookinfo

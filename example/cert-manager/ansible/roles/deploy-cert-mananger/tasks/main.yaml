@@ -1,0 +1,12 @@
+---
+- name: login to the clusters
+  include_tasks: authenticate.yaml
+  with_items: "{{ clusters }}"
+  loop_control:
+    loop_var: cluster 
+    
+- name: deploy cert-manager
+  include_tasks: deploy-cert-manager.yaml
+  with_items: "{{ clusters }}"
+  loop_control:
+    loop_var: cluster       
