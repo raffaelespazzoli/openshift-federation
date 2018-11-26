@@ -4,12 +4,6 @@
 apiVersion: core.federation.k8s.io/v1alpha1
 kind: FederatedDeployment
 metadata:
-  labels:
-    app: bookinfo-ingressgateway
-    chart: gateways-1.0.1
-    heritage: Tiller
-    istio: ingressgateway
-    release: istio-remote
   name: bookinfo-ingressgateway
 spec:
   template:
@@ -176,11 +170,6 @@ spec:
 apiVersion: core.federation.k8s.io/v1alpha1
 kind: FederatedServiceAccount
 metadata:
-  labels:
-    app: ingressgateway
-    chart: gateways-1.0.1
-    heritage: Tiller
-    release: istio-remote
   name: istio-ingressgateway-service-account  
 spec:
   template: {}   
@@ -196,12 +185,6 @@ apiVersion: core.federation.k8s.io/v1alpha1
 kind: FederatedService
 metadata:
   name: bookinfo-ingressgateway
-  labels:
-    chart: gateways-1.0.1
-    release: istio-remote
-    heritage: Tiller
-    app: bookinfo-ingressgateway
-    istio: ingressgateway
 spec:
   template:
     spec:
