@@ -1,6 +1,6 @@
 # Install Federation v2
 
-Note this has been tested with federation v0.0.3. It may not work with other releases.
+Note this has been tested with federation v0.0.4. It may not work with other releases.
 
 This playbook will istall Federation V2 and register a set of clusters to the federation control plane.
 See an example of the inventory [here](./ansible/inventory) and customize it for your clusters.
